@@ -1,0 +1,19 @@
+name: spotlight
+channels:
+  - conda-forge
+  - https://nexus-uclhtredev.uksouth.cloudapp.azure.com/repository/conda-repo/main/
+  - https://nexus-uclhtredev.uksouth.cloudapp.azure.com/repository/conda-mirror/main/
+dependencies:
+  - python=3.8
+  - numpy
+  - pip
+  - scikit-learn
+  - scipy
+  - pandas
+  - pip:
+      - inference-schema[numpy-support]==1.3.0
+      - xlrd
+      - mlflow
+      - xlrd
+      - azureml-mlflow==1.42.0
+      - xgboost

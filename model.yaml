@@ -1,0 +1,5 @@
+name: my-model-endpoint
+description: My model endpoint
+tags:
+    tag1: value1
+    tag2: value2

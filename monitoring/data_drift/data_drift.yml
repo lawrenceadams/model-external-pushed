@@ -1,0 +1,33 @@
+# <component>
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: measure_data_drift
+display_name: Data_Model_Drift
+version: 1
+type: command
+inputs:
+  reference_data_path:
+    type: uri_file
+  new_data_path:
+    type: uri_file
+  mlflow_uri:
+    type: string
+  logger_connection_string:
+    type: string
+  model_name:
+    type: string
+  model_version:
+    type: string
+
+code: ./data_drift_src
+environment: azureml:data-drift-env@latest
+experiment_name: data_drift_experiment
+command: >-
+  python data_drift.py 
+  --model_name ${{inputs.model_name}} 
+  --model_version ${{inputs.model_version}} 
+  --reference_data_path ${{inputs.reference_data_path}} 
+  --new_data_path ${{inputs.new_data_path}} 
+  --mlflow_uri ${{inputs.mlflow_uri}} 
+  --logger_connection_string ${{inputs.logger_connection_string}}
+
+# </component>

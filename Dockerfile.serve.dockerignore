@@ -1,0 +1,7 @@
+.devcontainer
+.github
+.scripts
+.vscode
+docs
+Makefile
+README.md

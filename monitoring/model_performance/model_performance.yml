@@ -1,0 +1,35 @@
+# <component>
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: measure_model_performance
+display_name: Model_performance
+version: 1
+type: command
+inputs:
+  inference_data_path:
+    type: uri_file
+  groundtruth_data_path:
+    type: uri_file
+  mlflow_uri:
+    type: string
+  logger_connection_string:
+    type: string
+  model_name:
+    type: string
+  model_version:
+    type: string
+  index_name:
+    type: string
+
+code: ./model_performance_src
+environment: azureml:model-performance-env@latest
+experiment_name: model_performance_experiment
+command: >-
+  python model_performance.py 
+  --model_name ${{inputs.model_name}} 
+  --inference_data_path ${{inputs.inference_data_path}} 
+  --groundtruth_data_path ${{inputs.groundtruth_data_path}}
+  --index_name ${{inputs.index_name}}
+  --mlflow_uri ${{inputs.mlflow_uri}}
+  --logger_connection_string ${{inputs.logger_connection_string}}
+
+# </component>

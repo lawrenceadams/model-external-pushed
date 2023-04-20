@@ -1,0 +1,24 @@
+{
+    "subscription_id": "<CHANGE_ME_SUBSCRIPTION_ID>",
+    "resource_group": "<CHANGE_ME_RESOURCE_GROUP>",
+    "workspace_name": "<CHANGE_ME_WORKSPACE_NAME>",
+    "log_handler_connection_string": "<CHANGE_ME_CONNECTION_STRING>",
+
+    "docker_image": "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest",
+
+    "datastore_path": "azureml://datastores/workspaceblobstore/paths",
+    "input_folder": "model_monitoring",
+    "reference_file_name": "reference_data.csv",
+    "new_file_name": "new_data.csv",
+    "ground_truth_file_name": "new_data_groundtruth.csv",
+    "inference_file_name": "new_data_inference.csv",
+
+    "model_name": "maintenance_model",
+    "model_version": "1",
+
+    "compute_target": "cpu-cluster",
+    "experiment_name": "data_drift_monitoring",
+    "perf_experiment_name": "model_performance_monitoring",
+
+    "index_name": "id"
+}
